@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.ilyaeremin.grpcclient";
+
+package grpcclient;
+
+service GrpcClient {
+    rpc Articles(Empty) returns (stream Article) {}
+}
+
+message Article {
+    string title = 1;
+    string mainMessageUrl = 2;
+    string content = 3;
+}
+
+message Empty {
+}
